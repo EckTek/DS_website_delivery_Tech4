@@ -24,7 +24,7 @@ def main():
     col1,col2  = st.columns([2,2])
     buttonPress = False
     with col1:
-        st.title("Hello")
+        st.title("Student Data Analysis")
 
     with col2:
         Input["gender"] = st.radio('Gender', ['male', 'female'])
@@ -53,7 +53,7 @@ def main():
         with col5:
             st.write("Here you can see the median of math score with your parental level of education")
             df = remove_outliers(df, "parental level of education", Input)
-            fig = px.box(df[df["parental level of education"] == Input["parental level of education"]], y="math score", x="parents' education", width=450, height=450)
+            fig = px.box(df[df["parental level of education"] == Input["parental level of education"]], y="math score", x="parental level of education", width=450, height=450)
             st.plotly_chart(fig)
         col6, col7, col8 = st.columns([2, 2, 2])
         with col6:
@@ -64,7 +64,7 @@ def main():
         with col7:
             st.write("Here you can see the median of math score with your test preparation course")
             df = remove_outliers(df, "test preparation course", Input)
-            fig = px.box(df[df["test preparation course"] == Input["test preparation course"]], y="math score", x="test preparation", width=450, height=450)
+            fig = px.box(df[df["test preparation course"] == Input["test preparation course"]], y="math score", x="test preparation course", width=450, height=450)
             st.plotly_chart(fig)
 
 
